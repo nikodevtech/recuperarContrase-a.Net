@@ -1,0 +1,22 @@
+﻿@model ejemploRecuperacion.Models.RecuperarViewModel
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-3">
+            <form asp-controller="Acceso" asp-action="Recuperar" method="post">
+                @Html.HiddenFor(u => u.Token)
+
+                <label for="email">Introduce tu nueva contraseña</label>
+                @Html.PasswordFor(u => u.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.Password, null, new { @class = "text-danger" })
+                <br />
+                <label for="email">Vuelve a introducir tu nueva contraseña</label>
+                @Html.PasswordFor(u => u.Password2, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.Password2, null, new { @class = "text-danger" })
+                <br />
+                <div class="text-right mt-5">
+                    <button type="submit" class="btn btn-primary">Recuperar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

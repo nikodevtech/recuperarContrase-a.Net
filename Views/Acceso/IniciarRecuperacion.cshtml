@@ -1,0 +1,17 @@
+﻿@model ejemploRecuperacion.Models.IniciarRecuperacionViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-3">
+            <form asp-controller="Acceso" asp-action="IniciarRecuperacion" method="post">
+                <label for="email">Escribe tu correo electrónico</label>
+                @Html.TextBoxFor(d => d.Email, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Email, null, new { @class = "text-danger" })
+                <br />
+                <div class="text-right mt-5">
+                    <button type="submit" class="btn btn-primary">Recuperar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
